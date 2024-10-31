@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+<title>Excursiones</title>
+</head>
+<body>
+	<!--Formulario de busqueda por palabra de origen  -->
+	<form  class="border border-dark-subtle rounded bg-light form" th:action="@{/excursiones/origen}" method="post" >
+		<fieldset>
+			<legend>Busqueda por palabra en origen</legend>
+				<div class="mb-3">
+					<label class="form-label">Busqueda:</label>
+					<input class="form-control input" type="text" name="palabraOrigen" placeholder="viaje o excursion tienen mas de una excursion" required>
+				</div>
+			<input type="submit" class="btn btn-primary" value="Enviar">
+			<input type="reset" class="btn btn-secondary enviar" value="RESTABLECER CAMBIOS" >
+		</fieldset>
+	</form>
+	<!--Formulario de busqueda por palabra de destino  -->
+	<form  class="border border-dark-subtle rounded bg-light form" th:action="@{/excursiones/destino}" method="post" >
+		<fieldset>
+			<legend>Busqueda por palabra en destino</legend>
+				<div class="mb-3">
+					<label class="form-label">Busqueda:</label>
+					<input class="form-control input" type="text" name="palabraDestino" placeholder="rioja o pirineos tienen mas de una excursion" required>
+				</div>
+			<input type="submit" class="btn btn-primary" value="Enviar">
+			<input type="reset" class="btn btn-secondary enviar" value="RESTABLECER CAMBIOS">
+		</fieldset>
+	</form>
+	<!--Formulario de busqueda por precio mayor que -->
+	<form  class="border border-dark-subtle rounded bg-light form" th:action="@{/excursiones/mayorque}" method="post" >
+		<fieldset>
+			<legend>Busqueda por precio mayor que</legend>
+				<div class="mb-3">
+					<label class="form-label">Busqueda:</label>
+					<input class="form-control input" type="text" name="precioMayorQue" placeholder="Precio mayor que..." required>
+				</div>
+			<input type="submit" class="btn btn-primary" value="Enviar">
+			<input type="reset" class="btn btn-secondary enviar" value="RESTABLECER CAMBIOS">
+		</fieldset>
+	</form>
+	<!--Formulario de busqueda por precio menor que -->
+	<form  class="border border-dark-subtle rounded bg-light form" th:action="@{/excursiones/menorque}" method="post" >
+		<fieldset>
+			<legend>Busqueda por precio menor que</legend>
+				<div class="mb-3">
+					<label class="form-label">Busqueda:</label>
+					<input class="form-control input" type="text" name="precioMenorQue" placeholder="Precio menor que..." required>
+				</div>
+			<input type="submit" class="btn btn-primary" value="Enviar">
+			<input type="reset" class="btn btn-secondary enviar" value="RESTABLECER CAMBIOS">
+		</fieldset>
+	</form>
+	<!--Formulario de busqueda por precio entre dos numeros -->
+	<form  class="border border-dark-subtle rounded bg-light form" th:action="@{/excursiones/preciominmax}" method="post" >
+		<fieldset>
+			<legend>Busqueda por precio entre dos valores</legend>
+				<div class="mb-3">
+					<label class="form-label">Busqueda:</label>
+					<input class="form-control input" type="text" name="precioMin" placeholder="primer valor" required>
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Busqueda:</label>
+					<input class="form-control input" type="text" name="precioMax" placeholder="segundo valor" required>
+				</div>
+			<input type="submit" class="btn btn-primary" value="Enviar">
+			<input type="reset" class="btn btn-secondary enviar" value="RESTABLECER CAMBIOS">
+		</fieldset>
+	</form>
+	
+	<a th:href="@{/}"><button class="btn btn-secondary detalle">Volver</button></a>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
